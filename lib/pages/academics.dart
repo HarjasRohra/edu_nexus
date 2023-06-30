@@ -37,7 +37,7 @@ class Academics extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Your Next Class is PBL(practical)',
+                'Your Next Class is PBL',
                 style: TextStyle(
                     fontSize: 20
                 ),
@@ -49,7 +49,7 @@ class Academics extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Your Total Attendance is 85.56%',
+                'Your Total Attendance is 88.21%',
                 style: TextStyle(
                     fontSize: 20
                 ),

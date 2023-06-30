@@ -5,8 +5,10 @@ class Stationary extends StatefulWidget {
   @override
   State<Stationary> createState() => _StationaryState();
 }
-Map <StationaryItem,int> cart =Map<StationaryItem,int>();
-int total=0;
+Map data = {
+  'Cart' : {},
+  'Total':0
+};
 class _StationaryState extends State<Stationary> {
   List<StationaryItem> items = [
     StationaryItem(name: 'Notebook', price: 25),
@@ -16,6 +18,14 @@ class _StationaryState extends State<Stationary> {
     StationaryItem(name: 'Printout(B/w)', price: 2),
     StationaryItem(name: 'Printout(color)', price: 10),
   ];
+
+  void pushBack(BuildContext context) async{
+    final Map returned_data = await Navigator.pushNamed(context, '/stat_cart',arguments: data) as Map;
+    setState(() {
+      data = returned_data;
+      print (0);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +44,24 @@ class _StationaryState extends State<Stationary> {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text('${items[index].name}\t Ordered: ${cart.containsKey(items[index])?cart[items[index]]:0}'),
+            title: Text('${items[index].name}\t Ordered: ${data['Cart'].containsKey(items[index].name)?data['Cart'][items[index].name]['qty']:0}'),
             subtitle: Text('Price: ₹${items[index].price.toString()}'),
             trailing: ElevatedButton(
               onPressed: () {
-                setState(() {if (cart.containsKey(items[index])) {
-                  cart[items[index]] = cart[items[index]]! + 1;
-                } else {
-                  cart[items[index]] = 1;
+                setState(() {
+
+                  if (data['Cart'].containsKey(items[index].name)) {
+                    data['Cart'][items[index].name]['qty']+=1;
+                    data['Cart'][items[index].name]['total cost']+=data['Cart'][items[index].name]['price'];
                 }
-                total+=items[index].price.toInt();
+                else{
+                  data['Cart'][items[index].name]={
+                    'price': items[index].price,
+                    'qty':1,
+                    'total cost': items[index].price
+                  };
+                  }
+                data['Total']+=items[index].price;
                 });
               },
               style: ElevatedButton.styleFrom(
@@ -59,7 +77,7 @@ class _StationaryState extends State<Stationary> {
          color: Colors.greenAccent,
          child: Row(
            children: [
-             Text('Your Total is:\t\t ₹${total}',
+             Text('Your Total is:\t\t ₹${data['Total']}',
                style: TextStyle(
                  color: Colors.white,
                  fontSize: 18.0,
@@ -67,20 +85,26 @@ class _StationaryState extends State<Stationary> {
              ),
              Spacer(),
              IconButton(icon: Icon(Icons.shopping_cart), color: Colors.white,
-               onPressed:(){
-               Navigator.pushNamed(context, '/stat_cart',arguments: cart);},
+               onPressed:() {
+               pushBack(context);},
              ),
            ],
+
          ),
        ),
 
      ),
     );
+
+
   }
 }
 
+
+
 class StationaryItem {
   String name;
-  double price;
+  int price;
+  int total_cost=0;
   StationaryItem({required this.name, required this.price});
 }

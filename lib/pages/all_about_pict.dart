@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../drawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 //General Information Page
 class AllAboutPICT extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +24,8 @@ class AllAboutPICT extends StatelessWidget {
                 Icons.logout,
                 color: Colors.grey[900],
               ),
-              onPressed: () {
-
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
               },
             ),
           ],

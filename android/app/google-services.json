@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "217767798845",
+    "project_id": "edunexus-f00a3",
+    "storage_bucket": "edunexus-f00a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217767798845:android:90a34e24de1ab780cfa254",
+        "android_client_info": {
+          "package_name": "com.example.edu_nexus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217767798845-6boishk9nvii20qpfh12aoqq03jvu2kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANZRnIWY6G3efJ0rkzJKc2mHcc1Hknijw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217767798845-6boishk9nvii20qpfh12aoqq03jvu2kr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "217767798845-3oreh89qgki1n1elc3o6u6jq489m68c1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eduNexus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

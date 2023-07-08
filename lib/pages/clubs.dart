@@ -64,8 +64,8 @@ class Club extends StatelessWidget {
                               )
                               ),),
                               onPressed: () async {
-                                var url=Uri.parse('https://chat.whatsapp.com/CPB5lZjvea8DuS9C91Gcfo');
-                               await launchUrl(url);
+                                var url=Uri.parse('https://chat.whatsapp.com/CPB5lZjvea8DuS9C91Gcfo',);
+                               await launchUrl(url,mode: LaunchMode.externalNonBrowserApplication);
                               },
                             ),
                           ],

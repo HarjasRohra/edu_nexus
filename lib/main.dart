@@ -37,7 +37,7 @@ class EduNexus extends StatelessWidget {
         '/club': (context)=>Club(),
         '/Stationary': (context)=> Stationary(),
         '/stat_cart':(context)=>StatCart(),
-        '/payment': (context)=> StationaryPayment(),
+        '/payment': (context)=> MyApp(),
         '/Cafeteria': (context)=> Cafeteria(),
         '/cafe_basket': (context)=>CafeBasket(),
       },

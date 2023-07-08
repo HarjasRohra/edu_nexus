@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:upi_india/upi_india.dart';
-import 'package:dio/dio.dart';
 
+void main() => runApp(MyApp());
 
-
-
-class StationaryPayment extends StatefulWidget {
-  const StationaryPayment({super.key});
-
-  @override
-  State<StationaryPayment> createState() => _StationaryPaymentState();
-}
-
-class _StationaryPaymentState extends State<StationaryPayment> {
-
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final txn_data=ModalRoute.of(context)!.settings.arguments as Map;
-    print(txn_data);
-    void placeOrder() async{
-      try{
-        final String token = '5801724186:AAGcIbyUyvmwtu_DCgmSEG2-dHzwO9EzdHI';
-        final String chat_id='1239391677';
-        final String url = 'https://api.telegram.org/bot$token/sendMessage?chat_id=$chat_id&text=${txn_data['Cart'].toString()}';
-        final response = await Dio().post(url);
-        print(response);}
-      catch(e){
-        print(e.toString());
-      }
-    }
- Future<UpiResponse>? _transaction;
+    return MaterialApp(
+      title: 'Test UPI',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  Future<UpiResponse>? _transaction;
   UpiIndia _upiIndia = UpiIndia();
   List<UpiApp>? apps;
 
@@ -63,7 +52,7 @@ class _StationaryPaymentState extends State<StationaryPayment> {
       receiverName: 'Stationary Store',
       transactionRefId: 'TestingUpiIndiaPlugin',
       transactionNote: 'Not actual. Just an example.',
-      amount: txn_data['Total'],
+      amount: 1.00,
     );
   }
 
@@ -119,7 +108,7 @@ class _StationaryPaymentState extends State<StationaryPayment> {
       case UpiIndiaUserCancelledException:
         return 'You cancelled the transaction';
       case UpiIndiaNullResponseException:
-        return 'Requested app didnt return any response';
+        return 'Requested app didn\'t return any response';
       case UpiIndiaInvalidParametersException:
         return 'Requested app cannot handle the transaction';
       default:
@@ -127,12 +116,10 @@ class _StationaryPaymentState extends State<StationaryPayment> {
     }
   }
 
-
   void _checkTxnStatus(String status) {
     switch (status) {
       case UpiPaymentStatus.SUCCESS:
         print('Transaction Successful');
-        placeOrder();
         break;
       case UpiPaymentStatus.SUBMITTED:
         print('Transaction Submitted');
@@ -162,12 +149,11 @@ class _StationaryPaymentState extends State<StationaryPayment> {
     );
   }
 
-
-
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Payment Screen'),
-        backgroundColor: Colors.cyanAccent[700],
+        title: Text('UPI'),
       ),
       body: Column(
         children: <Widget>[

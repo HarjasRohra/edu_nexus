@@ -37,7 +37,7 @@ class _StationaryState extends State<Stationary> {
             color: Colors.grey[900],
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.cyanAccent[700],
       ),
       drawer: AppDrawer(),
       body: ListView.builder(
@@ -67,7 +67,7 @@ class _StationaryState extends State<Stationary> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
               ),
-              child: Text('Add to Basket'),
+              child: Text('Add to Basket',style: TextStyle(color: Colors.teal[800]),),
             ),
           );
         },

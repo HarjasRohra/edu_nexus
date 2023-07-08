@@ -91,7 +91,9 @@ class _StatCartState extends State<StatCart> {
     ),
     ),
     Spacer(),
-    ElevatedButton(onPressed: () {}, child: Text('Continue to payment')),
+    ElevatedButton(onPressed: () {
+      Navigator.pushReplacementNamed(context, '/payment',arguments: cart_data);
+    }, child: Text('Continue to payment')),
     ]
       ),
     ),

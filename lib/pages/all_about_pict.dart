@@ -30,7 +30,7 @@ class AllAboutPICT extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.cyanAccent[700],
       ),
       drawer: AppDrawer(),
       body:

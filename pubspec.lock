@@ -89,14 +89,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
-  decimal:
-    dependency: transitive
-    description:
-      name: decimal
-      sha256: "7e6735d63c3fdeff3d20b60fde7fd974145110fef414256dd53d5cfc4c1fa1b4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.0"
   desktop_webview_auth:
     dependency: transitive
     description:
@@ -105,6 +97,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.12"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      sha256: a9d76e72985d7087eb7c5e7903224ae52b337131518d127c554b9405936752b8
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.1+1"
   email_validator:
     dependency: transitive
     description:
@@ -453,14 +453,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
-  rational:
-    dependency: transitive
-    description:
-      name: rational
-      sha256: "49ba0eb1a7b0d39358998cbbd4d4a384382a83ac02f433aefc567853c84ed975"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.1"
   sign_in_with_apple:
     dependency: transitive
     description:
@@ -522,14 +514,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  telegram:
-    dependency: "direct main"
-    description:
-      name: telegram
-      sha256: "8ec2e33e0a47b98132e7d8146f7aa2b03a97716b29f343ac169d27817783bac2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
   term_glyph:
     dependency: transitive
     description:
@@ -562,24 +546,16 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
-  universal_io:
-    dependency: transitive
-    description:
-      name: universal_io
-      sha256: "06866290206d196064fd61df4c7aea1ffe9a4e7c4ccaa8fcded42dd41948005d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.0"
-  upi_pay:
+  upi_india:
     dependency: "direct main"
     description:
-      name: upi_pay
-      sha256: "10be44346523cdfa1d8578d30230e9809e17a3e2cabf04e9eceac375d2ab7b4f"
+      name: upi_india
+      sha256: "483f1425ee8f0897397861b107e50b3aa195fec71215f86e906b625e841e90dd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "3.0.1"
   url_launcher:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: url_launcher
       sha256: eb1e00ab44303d50dd487aab67ebc575456c146c6af44422f9c13889984c00f3

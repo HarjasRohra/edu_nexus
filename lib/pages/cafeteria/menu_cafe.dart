@@ -30,10 +30,10 @@ class _CafeteriaState extends State<Cafeteria> {
         title: Text(
           'Cafeteria',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.grey[900],
           ),
         ),
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.cyanAccent[700],
       ),
       drawer: AppDrawer(),
       body: ListView.builder(
@@ -55,7 +55,7 @@ class _CafeteriaState extends State<Cafeteria> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
               ),
-              child: Text('Add to Basket'),
+              child: Text('Add to Basket',style: TextStyle(color: Colors.teal[800]),),
             ),
           );
         },

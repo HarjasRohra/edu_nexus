@@ -11,7 +11,7 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.cyanAccent[700],
             ),
             child: Text(
               'Menu',
@@ -22,7 +22,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Profile'),
+            title: Text('Profile',style: TextStyle(color: Colors.teal[800]),),
             onTap: () {
               Navigator.pushReplacementNamed(
                 context,
@@ -31,7 +31,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('All About PICT'),
+            title: Text('All About PICT',style: TextStyle(color: Colors.teal[800]),),
             onTap: () {
               Navigator.pushReplacementNamed(
                 context,
@@ -40,7 +40,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Academics'),
+            title: Text('Academics',style: TextStyle(color: Colors.teal[800]),),
             onTap: () {
               Navigator.pushReplacementNamed(
                 context,
@@ -50,7 +50,17 @@ class AppDrawer extends StatelessWidget {
           ),
 
           ListTile(
-            title: Text('Stationary Store'),
+            title: Text('Clubs',style: TextStyle(color: Colors.teal[800]),),
+            onTap: () {
+              Navigator.pushReplacementNamed(
+                  context,
+                  '/club'
+              );
+            },
+          ),
+
+          ListTile(
+            title: Text('Stationary Store',style: TextStyle(color: Colors.teal[800]),),
             onTap: () {
               Navigator.pushReplacementNamed(
                 context,
@@ -59,7 +69,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Cafeteria'),
+            title: Text('Cafeteria',style: TextStyle(color: Colors.teal[800]),),
             onTap: () {
               Navigator.pushReplacementNamed(
                 context,

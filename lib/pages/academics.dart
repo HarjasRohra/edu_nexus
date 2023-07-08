@@ -22,7 +22,7 @@ class Academics extends StatelessWidget {
             color: Colors.grey[900],
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.cyanAccent[700],
       ),
       drawer: AppDrawer(),
       body: SingleChildScrollView(
